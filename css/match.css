@@ -17,7 +17,7 @@ main{
     border-radius: 30px;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 50px;
+    grid-gap: 10px;
     padding: 30px 0px 0px 80px;
 }
 .banner-left{
@@ -37,7 +37,7 @@ main{
     line-height: 26px;
     margin-bottom: 25px;
 }
-.banner-btn{
+.banner-btn {
     background-color: #dd0046;
     border-radius: 5px;
     color: white;
@@ -46,14 +46,42 @@ main{
     border: none;
     padding: 16px 25px;
 }
+
+.banner-btn a {
+    text-decoration: none;
+    color: white;
+}
+
+/* animation for btn  */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 2px #dd0046;
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px #dd0046;
+        transform: scale(1.1);
+    }
+    100% {
+        box-shadow: 0 0 5px #dd0046;
+        transform: scale(1);
+    }  
+}
+
+.glowing {
+    animation: glowing 4s ease-in-out infinite;
+}
+
 .banner-btn i{
     margin-left: 10px;
 }
+
 .banner-right{
     position: relative;
 }
 .banner-right img{
-    width: 90%;
+    width: 100%;
     position: absolute;
     bottom: 0;
 }
@@ -73,7 +101,7 @@ main{
     align-items: center;
     justify-content: center;
     padding: 30px;
-    margin-right: 20px;
+    margin-right: 12px;
 }
 .menu-box button a{
     text-decoration: none;
@@ -89,11 +117,11 @@ main{
     border-radius: 10px;
     margin: 20px 0;
 }
-.menu-box> button:hover{
+.menu-box> button:hover, .menu-box>button:focus{
     background-color: #dd0046;
     border: none;
 }
-.menu-box>button:hover a{
+.menu-box>button:hover a, .menu-box>button:focus a{
     color: white;
 }
 
@@ -101,37 +129,40 @@ main{
     border-radius: 10px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 25px;
+    grid-gap: 7px;
 }
 .box{
     border: 1px solid #E8E8E8;
     border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 15px;
 }
-.box img{
-    width: 100%;
+.image-box{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.image-box span{
+    margin: 0 10px;
+    font-weight: 700;
+    font-size: 16p;
 }
 .box-info{ 
     padding: 15px;
 }
-.box-info>button{
-    width: 100px;
-    height: 32px;
-    border-radius: 5px;
-    border: 1px solid #161616; 
+.box-title{
+    font-size: 20px;
+    color: #161616;
+    margin-bottom: 0px;
+    line-height: .5;
+}
+.box-text{
     font-size: 16px;
-    font-weight: 600;
-    background-color: white;
-}
-.box-info>button a{
-    text-decoration: none;
-    color: #161616;
-}
-.box-icon span{
-    color: #161616;
-    margin-right: 25px;
-}
-.box-icon span>i{
-    margin-right: 10px;
+    text-align: center;
+    color: #4D4D4D;
 }
 
 .box-btn {
@@ -167,6 +198,7 @@ footer{
     list-style: none;
     display: flex;
     justify-content: space-around;  
+    margin-left: -25px;
 }
 .footer-menu ul>li>a{
     text-decoration: none;
@@ -183,13 +215,13 @@ footer{
 /* Responsive Media Queries  */
 
 /* for mobile  */
-@media only screen and (max-width:576px) {
+@media only screen and (max-width:688px) {
     main{
         width:85%;;
     }
     .top-banner{
         grid-template-columns: repeat(1, 1fr);
-        grid-gap: 270px;
+        grid-gap: 200px;
         padding: 20px;
         text-align: center;
         margin-top: 20px;
@@ -203,7 +235,7 @@ footer{
         font-size: 14px;
     }
     .banner-right img {
-        width: 85%;
+        width: 98%;
         position: absolute;
         bottom: -20px;
         left: 0;
@@ -212,12 +244,22 @@ footer{
     /* box part  */
     .box-part{
         flex-direction: column;
+        align-items: center;
     }
     .box-left{
         background: none;
+        margin-right: 0px;
     }
     .menu-box button{
         background: none;
+    }
+    .menu-box>button:focus {
+        background-color: #dd0046;
+        border: none;
+    }
+
+    .menu-box>button:focus a {
+        color: white;
     }
     .box-right{
         grid-template-columns: repeat(1, 1fr);
@@ -226,14 +268,12 @@ footer{
     footer{
         padding: 50px 30px;
     }
-    .footer-menu{
-        margin: 0;
-    }
     .footer-text>h1{
         margin-top: 0;
     }
     .footer-menu ul{
         flex-direction: column;
+        margin-left: -50px;
     }
     .footer-menu>ul>li{
         margin-top: 15px;
@@ -255,7 +295,9 @@ footer{
         margin-bottom: 30px;
         margin-top: 30px;
     }
-
+    .banner-right img{
+            width: 96%;
+    }
     .box-part{
         flex-direction: column;
         align-items: center;
@@ -263,6 +305,14 @@ footer{
     }
     .menu-box{
         display: inherit;
+    }
+    .menu-box>button:focus {
+        background-color: #dd0046;
+        border: none;
+    }
+
+    .menu-box>button:focus a {
+        color: white;
     }
     .box-left{
         width: 90%;
@@ -293,6 +343,9 @@ footer{
     }
     .footer-text>h1{
         margin-top: 0px;
+    }
+    .footer-menu{
+        width: 80%;
     }
     .footer-menu ul{
         flex-wrap: wrap;

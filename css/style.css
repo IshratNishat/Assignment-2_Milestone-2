@@ -1,0 +1,354 @@
+/* global styles  */
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+}
+main{
+    width: 1080px;
+    margin: 0 auto;
+}
+
+.top-banner{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    background-color: #161616;
+    border-radius: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    padding: 30px 0px 0px 80px;
+}
+.banner-left{
+    padding: 50px 0;
+}
+.banner-heading h1{
+    font-size: 70px;
+    font-weight: 700;
+    color: white;
+    line-height: 80px;
+    margin: 0px;
+}
+.banner-text{
+    color: white;
+    font-family: 16px;
+    font-weight: 400;
+    line-height: 26px;
+    margin-bottom: 25px;
+}
+.banner-btn{
+    background-color: #dd0046;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    padding: 16px 25px;
+}
+.banner-btn a{
+    text-decoration: none;
+    color: white;
+}
+
+/* animation for btn  */
+@keyframes glowing {
+    0% {
+        box-shadow: 0 0 2px #dd0046;
+        transform: scale(1);
+    }
+
+    50% {
+        box-shadow: 0 0 30px #dd0046;
+        transform: scale(1.1);
+    }
+    100% {
+        box-shadow: 0 0 5px #dd0046;
+        transform: scale(1);
+    }  
+}
+
+.glowing {
+    animation: glowing 4s ease-in-out infinite;
+}
+
+.banner-btn i{
+    margin-left: 10px;
+}
+
+.banner-right{
+    position: relative;
+}
+.banner-right img{
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+
+/* box part starts  */
+.box-part{
+    display: flex;
+    margin-bottom: 100px;
+}
+.box-left{
+    width: 250px;
+    height: 250px;
+    background-color: #161616;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    margin-right: 20px;
+}
+.menu-box button a{
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+    color: #161616;
+}
+.menu-box button {
+    display: block;
+    margin: 0 auto;
+    height: 60px;
+    width: 220px;
+    border-radius: 10px;
+    margin: 20px 0;
+}
+.menu-box> button:hover, .menu-box>button:focus{
+    background-color: #dd0046;
+    border: none;
+}
+.menu-box>button:hover a, .menu-box>button:focus a{
+    color: white;
+}
+
+.box-right{
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 25px;
+}
+.box{
+    border: 1px solid #E8E8E8;
+    border-radius: 10px;
+}
+.box img{
+    width: 100%;
+}
+.box-info{ 
+    padding: 15px;
+}
+.box-info>button{
+    width: 100px;
+    height: 32px;
+    border-radius: 5px;
+    border: 1px solid #161616; 
+    font-size: 16px;
+    font-weight: 600;
+    background-color: white;
+}
+.box-info>button a{
+    text-decoration: none;
+    color: #161616;
+}
+.box-icon span{
+    color: #161616;
+    margin-right: 25px;
+}
+.box-icon span>i{
+    margin-right: 10px;
+}
+
+.box-btn {
+    background-color: #dd0046;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    border: none;
+    padding: 15px 0px;
+    width: 130px;
+    margin-top: 50px;
+    display: none;
+}
+
+/* footer css starts  */
+footer{
+    background-color: #161616;
+    margin: 0;
+    padding: 100px 80px;
+}
+.footer-text{
+    text-align: center;
+}
+.footer-menu{
+    width: 80%;
+    margin: 25px auto;
+}
+.footer-text>h1{
+    color: white;
+}
+.footer-menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;  
+    margin-left: -25px;
+}
+.footer-menu ul>li>a{
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+.footer-icon a>i{
+    color: white;
+    font-size: 24px;
+    margin: 20px 20px 0 20px;
+}
+
+/* Responsive Media Queries  */
+
+/* for mobile  */
+@media only screen and (max-width:576px) {
+    main{
+        width:85%;;
+    }
+    .top-banner{
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: 200px;
+        padding: 20px;
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 0px;
+    }
+    .banner-heading h1{
+        font-size: 22px;
+        line-height: 35px;
+    }
+    .banner-heading p{
+        font-size: 14px;
+    }
+    .banner-right img {
+        width: 98%;
+        position: absolute;
+        bottom: -20px;
+        left: 0;
+        right: 0;
+    }
+    /* box part  */
+    .box-part{
+        flex-direction: column;
+        align-items: center;
+    }
+    .box-left{
+        background: none;
+        margin-right: 0px;
+    }
+    .menu-box button{
+        background: none;
+    }
+    .menu-box>button:focus {
+        background-color: #dd0046;
+        border: none;
+    }
+
+    .menu-box>button:focus a {
+        color: white;
+    }
+    .box-right{
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    footer{
+        padding: 50px 30px;
+    }
+    
+    .footer-text>h1{
+        margin-top: 0;
+    }
+    .footer-menu ul{
+        flex-direction: column;
+        margin-left: -50px;
+    }
+    .footer-menu>ul>li{
+        margin-top: 15px;
+    }
+}
+
+/* tablet device */
+@media only screen and (min-width:688px) and (max-width:992px) {
+    main{
+        width: 95%;
+    }
+    .banner-heading h1 {
+        font-size: 40px;
+        line-height: 55px;
+    }
+    .top-banner{
+        grid-gap: 20px;
+        padding-left: 30px;
+        margin-bottom: 30px;
+        margin-top: 30px;
+    }
+    .banner-right img{
+            width: 96%;
+    }
+    .box-part{
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 50px;
+    }
+    .menu-box{
+        display: inherit;
+    }
+    .menu-box>button:focus {
+        background-color: #dd0046;
+        border: none;
+    }
+
+    .menu-box>button:focus a {
+        color: white;
+    }
+    .box-left{
+        width: 90%;
+        height: auto;
+        margin: 0 auto;
+        background: none;
+    }
+    .menu-box button {
+        background: none;
+        margin: 0 20px;
+    }
+    .menu-box button a{
+        font-weight: 600;
+    }
+    .box-right{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .extra{
+        display: none;
+    }
+    .box-btn{
+        display: block;
+    }
+    footer {
+        background-color: #161616;
+        margin: 0;
+        padding: 50px 30px;
+    }
+    .footer-text>h1{
+        margin-top: 0px;
+    }
+    .footer-menu{
+        width: 80%;
+    }
+    .footer-menu ul{
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .footer-menu>ul>li{
+        margin: 0 10px;
+    }
+}
