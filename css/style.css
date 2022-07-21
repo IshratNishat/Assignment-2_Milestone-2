@@ -211,7 +211,7 @@ footer{
 /* Responsive Media Queries  */
 
 /* for mobile  */
-@media only screen and (max-width:576px) {
+@media only screen and (max-width:688px) {
     main{
         width:85%;;
     }
